@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../../public/download.png';
+import logo from '../../public/logo.png';
 import { FaFacebook, FaYoutube, FaTwitterSquare, FaLinkedin } from "react-icons/fa";
 
 const Footer = () => {
@@ -31,11 +31,12 @@ const Footer = () => {
                 <div className="items-center grid-flow-col">
                     
                     <img src={logo} alt="" width="30" height="30" viewBox="0 0 30 30" />
-                    <p className='font-semibold'>Creative Creator Toys <br />Providing reliable educational toys since 2023</p>
+                    <p  ><span className='font-semibold text-xl'> Creative Creator Toys </span>   <br /> The Multings, Dublin 8, Ireland <br />Providing reliable educational toys since 2023</p>
+                    <p className='font-semibold'> </p>
                 </div>
-                <p>Copyright © 2023 - All right reserved by CCT Ltd</p>
+                <p className='pt-12 font-thin text-black'>Copyright © 2023 - All right reserved by CCT Ltd</p>
                 <div className="md:place-self-center md:justify-self-end">
-                    <div className="grid grid-flow-col gap-4">
+                    <div className="grid grid-flow-col gap-4 pt-5">
                          <FaFacebook className='w-6 h-6 text-blue-500'></FaFacebook>
                          <FaLinkedin className='w-6 h-6 text-blue-500'></FaLinkedin>
                          <FaTwitterSquare className='w-6 h-6 text-blue-500'></FaTwitterSquare>
