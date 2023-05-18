@@ -40,7 +40,7 @@ const AllToys = () => {
                     {/* head */}
                     <thead className='py-5'>
                         <tr>
-                            <th></th>
+                            <th>No</th>
                             <th>seller Name</th>
                             <th>Toy Name</th>
                             <th>Subcategory</th>
@@ -52,9 +52,9 @@ const AllToys = () => {
                     <tbody>
 
                         {
-                            toys.map(toy =>
+                            toys.map((toy, id) =>
                                 <tr key={toy._id}>
-                                    <th>1</th>
+                                    <th>{id + 1}</th>
                                     <td>{toy.seller}</td>
                                     <td>{toy.name}</td>
                                     <td>{toy.category}</td>

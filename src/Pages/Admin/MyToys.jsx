@@ -51,7 +51,7 @@ const MyToys = () => {
                     {/* head */}
                     <thead>
                         <tr>
-                            <th></th>
+                            <th>No</th>
                             <th>Toy Photo</th>
                             <th>Toy Name</th>
                             <th>Subcategory</th>
@@ -64,9 +64,9 @@ const MyToys = () => {
                     </thead>
                     <tbody>
                         {
-                            toys.map(toy =>
+                            toys.map((toy, id) =>
                                 <tr key={toy._id}>
-                                    <th>1</th>
+                                    <th>{id + 1}</th>
                                     <td className=" ">
                                         <img src={toy.photoURL} alt="Avatar Tailwind CSS Component" className=" rounded-lg  w-14 h-14" />
                                     </td>

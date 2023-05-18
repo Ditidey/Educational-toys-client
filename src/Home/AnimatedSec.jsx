@@ -44,9 +44,9 @@ const AnimatedSec = () => {
                 <div className=" pt-10 ms-20 pb-5 lg:ps-20">
 
                     {
-                        articles.map(a =>
+                        articles.map((a, id) =>
 
-                            <div className="">
+                            <div className="" key={id}>
                                 <li className="font-sans hover:text-blue-600">{a}</li>
 
                             </div>
