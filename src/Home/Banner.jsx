@@ -8,7 +8,7 @@ const Banner = () => {
              <NavBar></NavBar>
             
              
-            <div className="hero-content text-center text-neutral-content pt-20">
+            <div className="hero-content text-center text-neutral-content pt-20" data-aos="fade-up-right"   data-aos-easing="ease-in-sine" data-aos-duration="1000">
                 <div className="max-w-md">
                     <h1 className="mb-5 text-5xl text-yellow-200 font-bold">Unlock Your Potential</h1>
                     <p className="mb-5">Fuel your child's imagination and foster their development with our wide range of educational toys. From hands-on learning to cognitive challenges, our carefully curated selection offers endless opportunities for fun and growth.</p>
