@@ -32,7 +32,7 @@ const NavBar = () => {
 
                     <ul tabIndex={0} className={`md:flex md:space-x-8 md:static mt-3  absolute duration-500 ${open === true ? 'top-14' : '-top-48'}`}>
                         <li><Link to='/'>Home</Link></li>
-                        <li><Link>Blog</Link></li>
+                        <li><Link to='/blog'>Blog</Link></li>
                         <li><Link to='/all-toys'>All Toys</Link></li>
 
                         {

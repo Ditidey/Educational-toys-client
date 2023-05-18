@@ -5,8 +5,10 @@ import Gallery from './Gallery';
 import ShopByCat from './ShopByCat';
 import Research from './Research';
 import AnimatedSec from './AnimatedSec';
+import useTitle from '../hooks/useTitle';
 
 const Home = () => {
+    useTitle('home')
     return (
         <div>
          

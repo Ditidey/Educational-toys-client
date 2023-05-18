@@ -10,6 +10,7 @@ import MyToys from "../Pages/Admin/MyToys";
 import AllToys from "../Pages/AllToys";
 import UpdateToy from "../Pages/Admin/UpdateToy";
 import SinglePage from "../Pages/Admin/SinglePage";
+import Blog from "../Pages/Blog";
 
 const router = createBrowserRouter([
     {
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
                 path: '/single/:id',
                 element: <ProtectedRoute><SinglePage></SinglePage></ProtectedRoute>,
                 loader: ({params})=>fetch(`http://localhost:5000/toy/${params.id}`)
+            },
+            {
+                path: '/blog',
+                element: <Blog></Blog>
             }
 
         ]

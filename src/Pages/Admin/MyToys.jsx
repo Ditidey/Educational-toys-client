@@ -3,8 +3,10 @@ import { contextProvider } from '../../AuthProvider';
 import NavBar from '../../Shared/NavBar';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
+import useTitle from '../../hooks/useTitle';
 
 const MyToys = () => {
+    useTitle('MyToys')
     const [toys, setToys] = useState([]);
     const { user } = useContext(contextProvider);
     const [value, setValue] = useState()

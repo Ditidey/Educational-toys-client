@@ -3,14 +3,17 @@ import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { contextProvider } from '../AuthProvider';
 import NavBar from '../Shared/NavBar';
+import useTitle from '../hooks/useTitle';
 
 const Login = () => {
+    useTitle('login')
     const [error, setError] = useState();
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
-    const {userLogin, googleLogin} = useContext(contextProvider);
+    const {userLogin, googleLogin, user} = useContext(contextProvider);
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
+    
     const handleOnSubmit = data =>{
          console.log(data)
          userLogin(data.email, data.password)
@@ -39,7 +42,7 @@ const Login = () => {
             <p className='text-red-700 font-bold text-center text-2xl'>{error}</p>
             <form onSubmit={handleSubmit(handleOnSubmit)} className='w-1/2 space-y-3 mx-auto bg-slate-100 p-10 ps-56 m-8 shadow-xl rounded-xl py-14'>
                 <label htmlFor="" className='font-mono ms-2 mt-2'>Email</label><br />
-                <input type='email' defaultValue="email@gmail.com" {...register("email", { required: true, required: "Email Address is required"})} className="input input-bordered w-full max-w-xs"/> <br />
+                <input type='email' defaultValue={user?.email} {...register("email", { required: true, required: "Email Address is required"})} className="input input-bordered w-full max-w-xs"/> <br />
 
                  <label htmlFor="" className='font-mono ms-2 '>Password</label> <br />
                 <input type='password' {...register("password", { required: true, maxLength: 6 })} className="input input-bordered w-full max-w-xs"/> <br />

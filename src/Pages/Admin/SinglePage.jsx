@@ -2,10 +2,12 @@ import React from 'react';
 import { Rating } from '@smastrom/react-rating'
 import { useLoaderData } from 'react-router-dom';
 import NavBar from '../../Shared/NavBar';
+import useTitle from '../../hooks/useTitle';
 
 
 
 const SinglePage = () => {
+    useTitle('Toy-Details')
     const toy = useLoaderData();
     const { price, description, quantity, name, rating, category, photoURL, _id, seller, email } = toy;
     return (

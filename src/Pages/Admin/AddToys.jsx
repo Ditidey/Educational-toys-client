@@ -3,8 +3,10 @@ import { useForm } from "react-hook-form";
 import NavBar from '../../Shared/NavBar';
 import Swal from 'sweetalert2';
 import { contextProvider } from '../../AuthProvider';
+import useTitle from '../../hooks/useTitle';
 
 const AddToys = () => {
+    useTitle('add-toys')
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const {user} = useContext(contextProvider);
     const {email, displayName} = user;

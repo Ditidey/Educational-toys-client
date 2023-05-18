@@ -4,6 +4,7 @@ import { contextProvider } from '../../AuthProvider';
 import { useForm } from "react-hook-form";
 import NavBar from '../../Shared/NavBar';
 import Swal from 'sweetalert2';
+import useTitle from '../../hooks/useTitle';
 
 const UpdateToy = () => {
     const toy = useLoaderData();
@@ -13,6 +14,7 @@ const UpdateToy = () => {
     const { email, displayName } = user;
 
     const handleOnSubmit = data => {
+        useTitle('update-toy')
         console.log(data)
         fetch(`http://localhost:5000/allToys/${_id}`, {
             method: 'PUT',

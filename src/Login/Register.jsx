@@ -3,8 +3,11 @@ import { useForm } from "react-hook-form";
 import { contextProvider } from '../AuthProvider';
 import { Link, useNavigate } from 'react-router-dom';
 import NavBar from '../Shared/NavBar';
+import Swal from 'sweetalert2';
+import useTitle from '../hooks/useTitle';
 
 const Register = () => {
+    useTitle('register')
     const [error, setError] = useState('');
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const {userCreate, updateUser, googleLogin} = useContext(contextProvider)
@@ -22,6 +25,13 @@ const Register = () => {
             .catch(error=>{
                 setError(error.message)
             })
+            Swal.fire({
+                title: 'Registration Successful!',
+                text: 'You can add, see and update toys',
+                icon: 'success',
+                confirmButtonText: 'Cool'
+            })
+
             navigate('/');
             
          })
