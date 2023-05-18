@@ -31,9 +31,9 @@ const AddToys = () => {
         })
     }
     return (
-        <div>
+        <div className='bg-blue-900 rounded-xl p-10'>
             <NavBar></NavBar>
-            <p className='text-center font-serif font-bold text-4xl mt-20 text-white'>Please add your toys' collection</p> <hr className='w-1/2 mt-2 ms-96' />
+            <p className='text-center font-serif font-bold text-4xl mt-20 text-white'>Please add your toys' collection</p> <hr className='w-1/2 mt-2 ms-80' />
              
             <form onSubmit={handleSubmit(handleOnSubmit)} className=' mx-auto bg-slate-200  m-8 shadow-xl rounded-xl py-14'>
                 <div className='flex justify-evenly'>

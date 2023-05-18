@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { contextProvider } from '../../AuthProvider';
 import NavBar from '../../Shared/NavBar';
+import Swal from 'sweetalert2';
 
 const MyToys = () => {
     const [toys, setToys] = useState([]);
@@ -14,10 +15,35 @@ const MyToys = () => {
                 setToys(data)
             })
     }, [user])
+
+    const handleDelete = id =>{
+        fetch(`http://localhost:5000/allToys/${id}`, {
+            method: 'DELETE'
+        })
+        .then(res =>res.json())
+        .then(data =>{
+            console.log(data)
+            if(data.deletedCount > 0){
+                Swal.fire({
+                    title: 'Delete!',
+                    text: 'Sorry! You have deleted one toy.',
+                    icon: 'success',
+                    confirmButtonText: 'Cool'
+                  })
+                  const remaining = toys.filter(toy => toy._id !== id);
+                  setToys(remaining);
+            }
+        })
+    }
     return (
-        <div className='mb-10'>
+        <div className='mb-10 bg-green-700 rounded-xl p-10'>
             <NavBar></NavBar>
-            <div className="overflow-x-auto w-full">
+            <p className='text-white text-center text-4xl font-serif font-bold pt-20 pb-3'>Your added educational toys</p>
+            <p className='text-slate-200 text-center font-serif mb-10'>Your total toys now {toys.length}. <br /> You can modified toys' information. <br /> Also you can delete one if you want, but it will not be retrieve.</p>
+             <div>
+                sorting?
+             </div>
+             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
                     {/* head */}
                     <thead>
@@ -41,13 +67,14 @@ const MyToys = () => {
                                     <td className=" ">
                                         <img src={toy.photoURL} alt="Avatar Tailwind CSS Component" className=" rounded-lg  w-14 h-14" />
                                     </td>
-                                    <td>{toy.seller}</td>
+                                   
                                     <td>{toy.name}</td>
                                     <td>{toy.category}</td>
                                     <td>${toy.price}</td>
                                     <td>{toy.quantity}</td>
+                                    <td className='h-10'>{toy.description.slice(0, 20)}..</td>
                                     <td><button className="btn btn-outline btn-info">Update</button></td>
-                                    <td><button className="btn btn-outline btn-warning">Delete</button></td>
+                                    <td><button onClick={()=>handleDelete(toy._id)} className="btn btn-outline btn-warning">Delete</button></td>
                                 </tr>
                             )
                         }

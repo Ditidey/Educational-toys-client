@@ -13,7 +13,7 @@ const AllToys = () => {
             })
     }, [])
     return (
-        <div className='my-5 mb-16'>
+        <div className='my-5  bg-red-900 rounded-xl p-10 py-16'>
             <NavBar></NavBar>
 
             <p className='text-white text-center text-5xl font-serif font-bold pt-20 pb-3'>Educational Toys Collection</p>
