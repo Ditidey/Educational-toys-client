@@ -9,6 +9,7 @@ import ProtectedRoute from "./ProtectedRoute";
 import MyToys from "../Pages/Admin/MyToys";
 import AllToys from "../Pages/AllToys";
 import UpdateToy from "../Pages/Admin/UpdateToy";
+import SinglePage from "../Pages/Admin/SinglePage";
 
 const router = createBrowserRouter([
     {
@@ -45,7 +46,13 @@ const router = createBrowserRouter([
                 path: '/updateToy/:id',
                 element:  <ProtectedRoute><UpdateToy></UpdateToy></ProtectedRoute>,
                 loader: ({params})=>fetch(`http://localhost:5000/toy/${params.id}`)
+            },
+            {
+                path: '/single/:id',
+                element: <ProtectedRoute><SinglePage></SinglePage></ProtectedRoute>,
+                loader: ({params})=>fetch(`http://localhost:5000/toy/${params.id}`)
             }
+
         ]
     }
 ])

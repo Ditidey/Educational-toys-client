@@ -7,12 +7,13 @@ import { Link } from 'react-router-dom';
 const MyToys = () => {
     const [toys, setToys] = useState([]);
     const { user } = useContext(contextProvider);
-
+    const [value, setValue] = useState()
+    console.log(value)
     useEffect(() => {
-        fetch(`http://localhost:5000/allToys?email=${user?.email}`)
+        fetch(`http://localhost:5000/allToys?email=${user?.email}&&value=${value}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 setToys(data)
             })
     }, [user])
@@ -41,8 +42,9 @@ const MyToys = () => {
             <NavBar></NavBar>
             <p className='text-white text-center text-4xl font-serif font-bold pt-20 pb-3'>Your added educational toys</p>
             <p className='text-slate-200 text-center font-serif mb-10'>Your total toys now {toys.length}. <br /> You can modified toys' information. <br /> Also you can delete one if you want, but it will not be retrieve.</p>
-             <div>
-                sorting?
+             <div className='my-5 '>
+                 <button onClick={()=>setValue('-1')} className="btn   btn-primary">Low price</button>
+                 <button onClick={()=>setValue('1')}  className='btn   btn-secondary ms-3'>High price</button>
              </div>
              <div className="overflow-x-auto w-full">
                 <table className="table w-full">
