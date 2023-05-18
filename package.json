@@ -10,10 +10,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@uiw/react-heat-map": "^2.0.5",
     "daisyui": "^2.51.6",
     "firebase": "^9.22.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-flip-move": "^3.0.5",
     "react-hook-form": "^7.43.9",
     "react-icons": "^4.8.0",
     "react-router-dom": "^6.11.1",

@@ -4,6 +4,7 @@ import Banner from './Banner';
 import Gallery from './Gallery';
 import ShopByCat from './ShopByCat';
 import Research from './Research';
+import AnimatedSec from './AnimatedSec';
 
 const Home = () => {
     return (
@@ -13,6 +14,7 @@ const Home = () => {
             <Gallery></Gallery>
             <ShopByCat></ShopByCat>
             <Research></Research>
+            <AnimatedSec></AnimatedSec>
         </div>
     );
 };
