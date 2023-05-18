@@ -28,20 +28,20 @@ const AnimatedSec = () => {
         { date: '2016/05/04', count: 11 },
     ];
     return (
-        <div className=' bg-slate-300'>
-            <p className='text-center font-serif font-bold text-5xl pt-4'>Best Toys  </p>
+        <div className=' bg-slate-300 my-4 shadow-2xl'>
+            <p className='text-center font-serif font-bold text-5xl pt-4 text-blue-700'>Best Toys  </p>
             <p className='text-center font-serif  pt-2'>Do you want to add? <Link to='/add-toy' className='text-blue-400 '>add to</Link>  </p>
 
-            <div className='flex bg-slate-300'>
+            <div className='lg:flex bg-slate-300 lg:ps-32'>
 
                 <div className='  pt-20 px-5 hover:animate-bounce'>
                     <HeatMap value={value} startDate={new Date('2016/01/01')}
-                        width={600}
+                        width={400}
                         style={{ color: '#ad001d' }}
                         height={200}
                     />
                 </div>
-                <div className=" pt-10 ms-20">
+                <div className=" pt-10 ms-20 pb-5 lg:ps-20">
 
                     {
                         articles.map(a =>

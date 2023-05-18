@@ -5,7 +5,7 @@ import { FaFacebook, FaYoutube, FaTwitterSquare, FaLinkedin } from "react-icons/
 const Footer = () => {
     return (
         <div>
-            <footer className="footer p-10  bg-base-200 text-base-content shadow-sm ">
+            <footer className="footer p-10  bg-base-200 text-base-content shadow-sm ps-32">
                 <div>
                     <span className="footer-title">Services</span>
                     <a className="link link-hover">Branding</a>

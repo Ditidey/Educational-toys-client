@@ -1,8 +1,13 @@
-import React from 'react';
-import photos from '../../public/photo.json';
+import React, { useEffect, useState } from 'react';
+// import photos from '../../public/photo.json';
 
 const Gallery = () => {
-
+const [photos, setPhotos] = useState([]);
+useEffect(()=>{
+    fetch('photo.json')
+    .then(res => res.json())
+    .then(data => setPhotos(data))
+},[])
     return (
         <div className='rounded-xl shadow-md'>
         <p className='text-white text-center font-serif font-bold mt-8 p-4 text-5xl shadow-lg bg-slate-500'>  Recent Collection</p> 
