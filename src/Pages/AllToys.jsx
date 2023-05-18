@@ -8,8 +8,9 @@ const AllToys = () => {
     useTitle('All-Toys');
     const [toys, setToys] = useState([]);
     const [nameToy, setNameToy] = useState('');
+    console.log(nameToy)
     useEffect(() => {
-        fetch(`http://localhost:5000/allToys`)
+        fetch(`http://localhost:5000/allToys?name=${nameToy}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data)

@@ -1,8 +1,7 @@
 import React from 'react';
-// // import React, { forwardRef } from 'react';
-// import FlipMove from 'react-flip-move';
 import HeatMap from '@uiw/react-heat-map';
 import { Link } from 'react-router-dom';
+ 
 const AnimatedSec = () => {
     const articles = ["Geography and Exploration Toys",
         "Coding and Robotics Toys",
@@ -29,7 +28,7 @@ const AnimatedSec = () => {
     ];
     return (
         <div className=' bg-slate-300 my-4 shadow-2xl'>
-            <p className='text-center font-serif font-bold text-5xl pt-4 text-blue-700'>Best Toys  </p>
+            <p className='text-center font-serif font-bold text-5xl pt-4 text-blue-700'> Best Toys  </p>
             <p className='text-center font-serif  pt-2'>Do you want to add? <Link to='/add-toy' className='text-blue-400 '>add to</Link>  </p>
 
             <div className='lg:flex bg-slate-300 lg:ps-32'>
