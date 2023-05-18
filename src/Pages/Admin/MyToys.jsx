@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { contextProvider } from '../../AuthProvider';
 import NavBar from '../../Shared/NavBar';
 import Swal from 'sweetalert2';
+import { Link } from 'react-router-dom';
 
 const MyToys = () => {
     const [toys, setToys] = useState([]);
@@ -73,7 +74,7 @@ const MyToys = () => {
                                     <td>${toy.price}</td>
                                     <td>{toy.quantity}</td>
                                     <td className='h-10'>{toy.description.slice(0, 20)}..</td>
-                                    <td><button className="btn btn-outline btn-info">Update</button></td>
+                                    <td> <Link to={`/updateToy/${toy._id}`} className="btn btn-outline btn-info">Update</Link></td>
                                     <td><button onClick={()=>handleDelete(toy._id)} className="btn btn-outline btn-warning">Delete</button></td>
                                 </tr>
                             )
