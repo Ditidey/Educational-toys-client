@@ -45,24 +45,22 @@ const MyToys = () => {
                             Swal.fire(
                                 'Delete!',
                                 'Sorry! You have deleted one toy.',
-
                             )
                         }
                         const remaining = toys.filter(toy => toy._id !== id);
                         setToys(remaining);
                     })
             }
-
-
-
         })
 
     }
     return (
         <div className='mb-10 bg-green-700 rounded-xl p-10'>
             <NavBar></NavBar>
+
             <p className='text-white text-center text-4xl font-serif font-bold pt-20 pb-3'>Your added educational toys</p>
             <p className='text-slate-200 text-center font-serif mb-10'>Your total toys now {toys.length}. <br /> You can modified toys' information. <br /> Also you can delete one if you want, but it will not be retrieve.</p>
+            
             <div className="dropdown mb-5">
                 <label tabIndex={0} className="btn m-1">
                     <FaSortNumericDownAlt className='me-2'></FaSortNumericDownAlt>
@@ -73,10 +71,6 @@ const MyToys = () => {
                 </ul>
             </div>
 
-            {/* <div className='my-5 '>
-                <button onClick={() => setValue('price')} className="btn   btn-primary">Sort By Price</button>
-                <button onClick={() => setValue('quantity')} className='btn   btn-secondary ms-3'>Sort by quantity</button>
-            </div> */}
             <div className="overflow-x-auto w-full">
                 <table className="table w-full">
                     {/* head */}
@@ -112,15 +106,7 @@ const MyToys = () => {
                                 </tr>
                             )
                         }
-
-
-
-
-
-
                     </tbody>
-
-
                 </table>
             </div>
         </div>

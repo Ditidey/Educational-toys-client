@@ -14,7 +14,7 @@ const Register = () => {
      const navigate = useNavigate();
 
     const handleOnSubmit = data =>{
-         console.log(data.email, data.photoURL)
+        //  console.log(data.email, data.photoURL)
          
          userCreate(data.email, data.password)
          .then(result =>{
@@ -41,6 +41,7 @@ const Register = () => {
             setError(error.message)
          })
         };
+
   const handleGoogleLogin = () =>{
     googleLogin()
     .then((result)=>{
@@ -52,8 +53,10 @@ const Register = () => {
     return (
         <div>
             <NavBar></NavBar>
+
             <p className='text-center font-serif font-bold text-4xl mt-20 text-white'>Please Create Account </p> <hr className='w-1/2 mt-2 ms-96'/>
             <p className='text-red-700 font-bold text-center text-2xl bg-yellow-200 p-2'>{error}</p>
+           
             <form onSubmit={handleSubmit(handleOnSubmit)} className='w-1/2   mx-auto bg-slate-100 p-10 ps-56 m-8 shadow-xl rounded-xl py-14'>
                 <label htmlFor="" className='font-mono ms-2 '>Name</label><br />
                 <input type='text' defaultValue="name" {...register("name", { required: true, required: "Name is required"})} className="input input-bordered w-full max-w-xs"/> <br />
@@ -69,7 +72,9 @@ const Register = () => {
 
                 <input type="submit" value='Register' className="btn w-2/4 bg-blue-800 px-10 mt-6 ms-4 "/>
             </form>
+
             <button onClick={handleGoogleLogin}  className="btn btn-outline btn-warning ms-96 shadow-2xl">Login with Google</button>
+            
             <p className='text-center mt-4 mb-5 text-blue-200'>Already registered? <Link to='/login'>Login</Link></p>
         </div>
     );

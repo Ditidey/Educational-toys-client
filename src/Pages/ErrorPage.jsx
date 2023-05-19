@@ -3,6 +3,7 @@ import { Link, useRouteError } from 'react-router-dom';
 
 const ErrorPage = () => {
     const error = useRouteError();
+    
     return (
         <div className='p-10 bg-black h-full'>
             <Link to='/' className="link link-primary  ms-4 mt-4 btn btn-outline btn-primary">Back to home page</Link>

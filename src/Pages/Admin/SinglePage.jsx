@@ -15,6 +15,7 @@ const SinglePage = () => {
         <div className=' mt-20 lg:flex p-10'>
              
             <img src={photoURL} alt="" className='w-1/2 rounded-xl'/>
+            
             <div className='bg-slate-300 p-20 rounded-xl lg:pt-40'>               
                 <h3 className="text-3xl font-bold ms-44 flex mb-2 ">{name}
                     <Rating value={rating} style={{ maxWidth: 80 }} readOnly className='ms-2'></Rating> </h3>

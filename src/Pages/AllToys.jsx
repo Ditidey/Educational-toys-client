@@ -67,8 +67,6 @@ const AllToys = () => {
                                 </tr>
                             )
                         }
-{/* <SinglePage toy={toy}></SinglePage>? */}
-
                     </tbody>
                 </table>
             </div>
