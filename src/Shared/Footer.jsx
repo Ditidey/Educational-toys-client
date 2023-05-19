@@ -1,6 +1,6 @@
 import React from 'react';
 import logo from '../../public/logo.png';
-import { FaFacebook, FaYoutube, FaTwitterSquare, FaLinkedin } from "react-icons/fa";
+import { FaFacebook, FaYoutube, FaTwitterSquare, FaLinkedin, FaThumbsUp } from "react-icons/fa";
 
 const Footer = () => {
     return (
@@ -26,8 +26,14 @@ const Footer = () => {
                     <a className="link link-hover">Privacy policy</a>
                     <a className="link link-hover">Cookie policy</a>
                 </div>
+                <div>
+                    <span className="footer-title">Subscription</span>
+                   <input type="text" className="input   w-full max-w-xs" />
+                    <button className="btn  btn-primary">Subscription 
+                    <FaThumbsUp className='ms-3 h-5'></FaThumbsUp></button>
+                </div>
             </footer>
-            <footer className="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300">
+            <footer className="footer px-10 py-4 border-t bg-base-200 text-base-content border-base-300 shadow-xl">
                 <div className="items-center grid-flow-col">
                     
                     <img src={logo} alt="" width="30" height="30" viewBox="0 0 30 30" />

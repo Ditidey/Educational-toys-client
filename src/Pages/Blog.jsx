@@ -7,7 +7,7 @@ const Blog = () => {
     return (
         <div>
             <NavBar></NavBar>
-            <div className='bg-slate-100 rounded-xl py-14 px-20 mt-20'>
+            <div className='bg-slate-100 rounded-xl py-14 px-20 mt-20 mb-10'>
                 <p className='text-2xl font-bold '>Question 1: What is an access token and refresh token? How do they work and where should we store them on the client-side?</p>
                 <p>Answer: An access token is a credential we can use for accessing resources, like JWT is an access token I used in my car-doctor project. On the other hand a refresh token we can use to obtain a new access token, like after login we got another refresh token. Access tokens are stored in memory, but refresh need to store tokens securely, often we store in an HTTP-only cookie but it is not much secure. It is important to maintain security guidelines when handling and storing these tokens on the client-side</p>
 

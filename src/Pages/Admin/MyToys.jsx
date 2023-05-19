@@ -4,6 +4,7 @@ import NavBar from '../../Shared/NavBar';
 import Swal from 'sweetalert2';
 import { Link } from 'react-router-dom';
 import useTitle from '../../hooks/useTitle';
+import { FaSortNumericDownAlt } from 'react-icons/fa';
 
 const MyToys = () => {
     useTitle('MyToys')
@@ -23,25 +24,25 @@ const MyToys = () => {
     }, [user, value])
 
     const handleDelete = id => {
-        
-            fetch(`https://educational-toys-server.vercel.app/allToys/${id}`, {
-                method: 'DELETE'
+
+        fetch(`https://educational-toys-server.vercel.app/allToys/${id}`, {
+            method: 'DELETE'
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                if (data.deletedCount > 0) {
+                    Swal.fire({
+                        title: 'Delete!',
+                        text: 'Sorry! You have deleted one toy.',
+                        icon: 'success',
+                        confirmButtonText: 'Cool'
+                    })
+                    const remaining = toys.filter(toy => toy._id !== id);
+                    setToys(remaining);
+                }
             })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data)
-                    if (data.deletedCount > 0) {
-                        Swal.fire({
-                            title: 'Delete!',
-                            text: 'Sorry! You have deleted one toy.',
-                            icon: 'success',
-                            confirmButtonText: 'Cool'
-                        })
-                        const remaining = toys.filter(toy => toy._id !== id);
-                        setToys(remaining);
-                    }
-                })
-      
+
     }
     return (
         <div className='mb-10 bg-green-700 rounded-xl p-10'>
@@ -49,10 +50,12 @@ const MyToys = () => {
             <p className='text-white text-center text-4xl font-serif font-bold pt-20 pb-3'>Your added educational toys</p>
             <p className='text-slate-200 text-center font-serif mb-10'>Your total toys now {toys.length}. <br /> You can modified toys' information. <br /> Also you can delete one if you want, but it will not be retrieve.</p>
             <div className="dropdown mb-5">
-                <label tabIndex={0} className="btn m-1">Sort by Price</label>
+                <label tabIndex={0} className="btn m-1">
+                    <FaSortNumericDownAlt className='me-2'></FaSortNumericDownAlt>
+                    Sort by Price</label>
                 <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-                    <li><a onClick={()=>setOrder(true)}>Lower</a></li>
-                    <li><a onClick={()=>setOrder(false)}>Higher</a></li>
+                    <li><a onClick={() => setOrder(!order)}>Lower</a></li>
+                    <li><a onClick={() => setOrder(!order)}>Higher</a></li>
                 </ul>
             </div>
 
