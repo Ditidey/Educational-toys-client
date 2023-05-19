@@ -11,17 +11,17 @@ const MyToys = () => {
     const [toys, setToys] = useState([]);
     const { user } = useContext(contextProvider);
     const [value, setValue] = useState('price');
-    const [order, setOrder] = useState(true);
-    console.log(typeof order)
+    const [order, setOrder] = useState('descending');
+    console.log( order)
 
     useEffect(() => {
-        fetch(`https://educational-toys-server.vercel.app/allToys?email=${user?.email}&price=${value}&oder=${order}`)
+        
+        fetch(`https://educational-toys-server.vercel.app/allToys?email=${user?.email}&price=${value}&order=${order}`)
             .then(res => res.json())
             .then(data => {
-                // console.log(data)
                 setToys(data)
             })
-    }, [user, value])
+    }, [user, value, order])
 
     const handleDelete = id => {
 
@@ -54,8 +54,8 @@ const MyToys = () => {
                     <FaSortNumericDownAlt className='me-2'></FaSortNumericDownAlt>
                     Sort by Price</label>
                 <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-                    <li><a onClick={() => setOrder(!order)}>Lower</a></li>
-                    <li><a onClick={() => setOrder(!order)}>Higher</a></li>
+                    <li><a onClick={() => setOrder('ascending')}>Ascending</a></li>
+                    <li><a onClick={() => setOrder('descending')}>Descending</a></li>
                 </ul>
             </div>
 

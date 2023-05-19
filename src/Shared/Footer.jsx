@@ -29,7 +29,7 @@ const Footer = () => {
                 <div>
                     <span className="footer-title">Subscription</span>
                    <input type="text" className="input   w-full max-w-xs" />
-                    <button className="btn  btn-primary">Subscription 
+                    <button className="btn  btn-primary">Subscribe Us 
                     <FaThumbsUp className='ms-3 h-5'></FaThumbsUp></button>
                 </div>
             </footer>
