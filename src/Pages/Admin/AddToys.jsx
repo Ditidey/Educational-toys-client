@@ -10,7 +10,7 @@ const AddToys = () => {
     const { register, handleSubmit, watch, formState: { errors } } = useForm();
     const {user} = useContext(contextProvider);
     const {email, displayName} = user;
-
+     console.log(email)
     const handleOnSubmit = data => {
         console.log(data)
         fetch('https://educational-toys-server.vercel.app/addToys', {

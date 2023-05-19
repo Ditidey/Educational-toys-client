@@ -8,13 +8,13 @@ const ShopByCat = () => {
     const [tabIndex, setTabIndex] = useState(0);
     const [category, setCategory] = useState('Language Learning toys');
     const [datas, setDatas] = useState([])
-    console.log(datas)
+    // console.log(datas)
 
     useEffect(() => {
         fetch(`https://educational-toys-server.vercel.app/allToys?category=${category}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 setDatas(data)
             })
     }, [category])

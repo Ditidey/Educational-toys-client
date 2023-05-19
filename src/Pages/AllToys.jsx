@@ -8,12 +8,12 @@ const AllToys = () => {
     useTitle('All-Toys');
     const [toys, setToys] = useState([]);
     const [nameToy, setNameToy] = useState('');
-    console.log(nameToy)
+    // console.log(nameToy)
     useEffect(() => {
         fetch(`https://educational-toys-server.vercel.app/allToys?name=${nameToy}`)
             .then(res => res.json())
             .then(data => {
-                console.log(data)
+                // console.log(data)
                 setToys(data)
             })
     }, [nameToy])
@@ -21,7 +21,7 @@ const AllToys = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
         const searchValue = event.target.toy.value;
-        console.log(searchValue)
+        // console.log(searchValue)
         setNameToy(searchValue);
     }
     return (

@@ -16,13 +16,13 @@ const SinglePage = () => {
              
             <img src={photoURL} alt="" className='w-1/2 rounded-xl'/>
             <div className='bg-slate-300 p-20 rounded-xl lg:pt-40'>               
-                <h3 className="text-3xl font-bold ms-36 flex ">{name}
+                <h3 className="text-3xl font-bold ms-44 flex mb-2 ">{name}
                     <Rating value={rating} style={{ maxWidth: 80 }} readOnly className='ms-2'></Rating> </h3>
-                <p className="py-3 text-center text-2xl">price: ${price}  <span className='ps-10'>Quantity: {quantity}</span></p>
+                <p className="py-3 text-center text-xl">Price: ${price}  <span className='ps-10'>Quantity: {quantity}</span></p>
                  
-                <p className='text-center font-semibold py-2 text-2xl'>Seller's Name: {seller} </p>
-                <p className='text-center font-semibold py-2 text-2xl'>  <span className='ms-3'>Email: {email}</span></p>
-                <p className='py-4 ps-4 text-2xl'>Description: {description}</p>
+                <p className='text-center font-semibold py-2 text-xl'>Seller's Name: {seller} </p>
+                <p className='text-center font-semibold py-2 text-xl'>  <span className='ms-3'>Email: {email}</span></p>
+                <p className='py-4 ps-4 text-xl'>Description: {description}</p>
             </div>
         </div>
         </div>
