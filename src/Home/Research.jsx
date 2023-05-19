@@ -21,7 +21,7 @@ const Research = () => {
                         <h2 className="card-title">Puzzle and Logic Toys</h2>
                         <p> These toys enhance problem-solving abilities, critical thinking, and cognitive skills. They include jigsaw puzzles, brain teasers, and logic games that challenge children to analyze, strategize, and find solutions.</p>
                         <div className="card-actions justify-start">
-                            <p>Admin| June 11, 2018</p>
+                            <p>Admin| March 23, 2023</p>
                         </div>
                     </div>
                 </div>
@@ -31,7 +31,7 @@ const Research = () => {
                         <h2 className="card-title">Social and Emotional Learning (SEL) Toys</h2>
                         <p>  These toys focus on emotional intelligence, empathy, and social skills development. They include board games, role-playing sets, emotion cards, and cooperative play toys that facilitate social interaction, communication, and emotional understanding</p>
                         <div className="card-actions justify-start">
-                            <p>Admin| June 11, 2018</p>
+                            <p>Admin| May 11, 2021</p>
                         </div>
                     </div>
                 </div>
@@ -41,7 +41,7 @@ const Research = () => {
                         <h2 className="card-title">Musical Instruments</h2>
                         <p>  These toys introduce children to music, rhythm, and sound exploration. They may include toy keyboards, drums, xylophones, and musical activity sets that promote sensory development and auditory skills.</p>
                         <div className="card-actions justify-start">
-                            <p>Admin| June 11, 2018</p>
+                            <p>Admin| June 11, 2020</p>
                         </div>
                     </div>
                 </div>
