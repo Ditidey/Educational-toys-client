@@ -26,11 +26,7 @@ const AuthProvider = ({ children }) => {
     const userLogout = ()=>{
         return signOut(auth)
     }
-    const updateUser = (displayName, photoURL) =>{
-        setLoading(true)
-        return updateProfile(auth.currentUser, {displayName, photoURL})
-    }
-
+   
     useEffect(()=>{
         const unsubscribe = onAuthStateChanged(auth, currentUser=>{
             setUser(currentUser)
@@ -40,6 +36,12 @@ const AuthProvider = ({ children }) => {
             return unsubscribe()
         }
     },[])
+    
+    const updateUser = (displayName, photoURL) =>{
+        setLoading(true)
+        return updateProfile(auth.currentUser, {displayName, photoURL})
+    }
+
     const authInfo = {
         userCreate,
         userLogin,

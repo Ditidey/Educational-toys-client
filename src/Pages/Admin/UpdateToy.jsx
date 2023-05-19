@@ -16,7 +16,7 @@ const UpdateToy = () => {
     const handleOnSubmit = data => {
         useTitle('update-toy')
         console.log(data)
-        fetch(`http://localhost:5000/allToys/${_id}`, {
+        fetch(`https://educational-toys-server.vercel.app/allToys/${_id}`, {
             method: 'PUT',
             headers: { 'content-type': 'application/json' },
             body: JSON.stringify(data)

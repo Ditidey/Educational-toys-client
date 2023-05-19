@@ -10,7 +10,7 @@ const AllToys = () => {
     const [nameToy, setNameToy] = useState('');
     console.log(nameToy)
     useEffect(() => {
-        fetch(`http://localhost:5000/allToys?name=${nameToy}`)
+        fetch(`https://educational-toys-server.vercel.app/allToys?name=${nameToy}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data)

@@ -1,12 +1,20 @@
-import React from 'react';
+import Aos from 'aos';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const Research = () => {
+    useEffect(() => {
+        Aos.init();
+    }, [])
     return (
         <>
-        <p className='text-center text-white text-5xl font-serif font-bold mt-10 mb-3 shadow-xl'>Research Says</p>
-        <p className='text-white text-center mb-5'>More article? <Link to='/blog' className='text-blue-400'>Visit our blog</Link></p>
-            <div className='grid grid-cols-1 lg:grid-cols-3 gap-5 mb-10'>
+            <p className='text-center text-white text-5xl font-serif font-bold mt-10 mb-3 shadow-xl'>Research Says</p>
+            <p className='text-white text-center mb-5'>More article? <Link to='/blog' className='text-blue-400'>Visit our blog</Link></p>
+
+            <div className='grid grid-cols-1 lg:grid-cols-3 gap-5 mb-10' data-aos="fade-right"
+                data-aos-offset="300"
+                data-aos-easing="ease-in-sine" data-aos-duration="2000">
+                    
                 <div className="card card-compact  bg-base-100  ">
                     <figure><img src="https://images.unsplash.com/photo-1680194389231-e88c9a767925?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8UHV6emxlJTIwYW5kJTIwTG9naWMlMjBUb3lzfGVufDB8fDB8fHww&auto=format&fit=crop&w=500&q=60" alt="Shoes" /></figure>
                     <div className="card-body">

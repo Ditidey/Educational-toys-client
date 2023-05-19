@@ -14,12 +14,14 @@ const Register = () => {
      const navigate = useNavigate();
 
     const handleOnSubmit = data =>{
-        //  console.log(data.email, data.password)
+         console.log(data.email, data.photoURL)
+         
          userCreate(data.email, data.password)
          .then(result =>{
             const loggedUser = result.user;
             console.log(loggedUser)
             setError('')
+
             updateUser(data.name, data.photoURL)
             .then(()=>{})
             .catch(error=>{

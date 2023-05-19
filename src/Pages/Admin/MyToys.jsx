@@ -9,10 +9,11 @@ const MyToys = () => {
     useTitle('MyToys')
     const [toys, setToys] = useState([]);
     const { user } = useContext(contextProvider);
-    const [value, setValue] = useState('')
+    const [value, setValue] = useState('price')
     console.log(value)
+
     useEffect(() => {
-        fetch(`http://localhost:5000/allToys?email=${user?.email}&value=${value}`)
+        fetch(`https://educational-toys-server.vercel.app/allToys?email=${user?.email}&price=${value}`)
             .then(res => res.json())
             .then(data => {
                 // console.log(data)
@@ -21,7 +22,7 @@ const MyToys = () => {
     }, [user, value])
 
     const handleDelete = id =>{
-        fetch(`http://localhost:5000/allToys/${id}`, {
+        fetch(`https://educational-toys-server.vercel.app/allToys/${id}`, {
             method: 'DELETE'
         })
         .then(res =>res.json())

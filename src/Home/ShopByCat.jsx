@@ -5,11 +5,11 @@ import 'react-tabs/style/react-tabs.css';
 
 const ShopByCat = () => {
     const [tabIndex, setTabIndex] = useState(0);
-    const [category, setCategory] = useState('Science Experiment Kits');
+    const [category, setCategory] = useState(' ');
     const [datas, setDatas] = useState([])
     console.log(category)
     useEffect(() => {
-        fetch(`http://localhost:5000/allToys?category=${category}`)
+        fetch(`https://educational-toys-server.vercel.app/allToys?category=${category}`)
             .then(res => res.json())
             .then(data => {
                 console.log(data)
@@ -21,14 +21,22 @@ const ShopByCat = () => {
             <div className='ms-32 '>
                 <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
                     <TabList>
-                        <Tab onClick={() => setCategory('Language Learning toys')}>Language Learning Toys</Tab>
-                        <Tab onClick={() => setCategory('Mathematical Manipulatives')}>Mathematical Manipulatives</Tab>
-                        <Tab onClick={() => setCategory('Science Experiment Kits')}>Science Experiment Kits</Tab>
+                        {
+                            datas.map(data => ( <Tab key={data._id}>{data.name}</Tab>))
+                        }
+                         
+                        {/* <Tab onClick={() => setCategory('Language Learning toys')}>Language Learning Toys</Tab> */}
+                        {/* <Tab onClick={() => setCategory('Mathematical Manipulatives')}>Mathematical Manipulatives</Tab>
+                        <Tab onClick={() => setCategory('Science Experiment Kits')}>Science Experiment Kits</Tab> */}
                     </TabList>
-
-                    <TabPanel>
+                    {/* <TabPanel><div>  {datas.length} </div> apapa</TabPanel> */}
+                    {/* <TabPanel>{datas.length} appap</TabPanel>
+                    <TabPanel>{datas.length} appa</TabPanel> */}
+                    {/* <TabPanel   >
                         {
-                            datas.slice(0, 2).map(data => <div key={data._id} className="card w-96 bg-base-500 shadow-xl image-full">
+                            datas.map(data =>
+                               
+                            <div key={data._id} className="card h-96 w-96 bg-base-500 shadow-xl image-full">
                                 <figure><img src={data.photoURL} alt="Shoes" /></figure>
                                 <div className="card-body">
                                     <h2 className="card-title">{data.name}</h2>
@@ -39,12 +47,15 @@ const ShopByCat = () => {
                                     </div>
                                 </div>
                             </div>
+                            
                             )
                         }
-                    </TabPanel>
-                    <TabPanel>
+                         </TabPanel>
+                         <TabPanel   >
                         {
-                            datas.slice(0, 2).map(data => <div key={data._id} className="card w-96 bg-base-500 shadow-xl image-full">
+                            datas.map(data =>
+                                 
+                            <div key={data._id} className="card h-96 w-96 bg-base-500 shadow-xl image-full">
                                 <figure><img src={data.photoURL} alt="Shoes" /></figure>
                                 <div className="card-body">
                                     <h2 className="card-title">{data.name}</h2>
@@ -55,12 +66,14 @@ const ShopByCat = () => {
                                     </div>
                                 </div>
                             </div>
+                            
                             )
                         }
-                    </TabPanel>
-                    <TabPanel>
+                         </TabPanel>
                         {
-                            datas.slice(0, 2).map(data => <div key={data._id} className="card w-96 bg-base-500 shadow-xl image-full">
+                            datas.map(data =>
+                                <TabPanel key={data._id} >
+                            <div className="card h-96 w-96 bg-base-500 shadow-xl image-full">
                                 <figure><img src={data.photoURL} alt="Shoes" /></figure>
                                 <div className="card-body">
                                     <h2 className="card-title">{data.name}</h2>
@@ -71,9 +84,9 @@ const ShopByCat = () => {
                                     </div>
                                 </div>
                             </div>
+                            </TabPanel>
                             )
-                        }
-                    </TabPanel>
+                        } */}
                 </Tabs>
             </div>
         </div>

@@ -13,7 +13,7 @@ const AddToys = () => {
 
     const handleOnSubmit = data => {
         console.log(data)
-        fetch('http://localhost:5000/addToys', {
+        fetch('https://educational-toys-server.vercel.app/addToys', {
             method: 'POST',
             headers:{'content-type': 'application/json'},
             body: JSON.stringify(data)
