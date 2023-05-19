@@ -13,7 +13,7 @@ const NavBar = () => {
     const { user, userLogout } = useContext(contextProvider)
     const [open, setOpen] = useState(false);
     console.log(user?.displayName, user?.photoURL)
-    
+
     // useEffect(() => {
     //     ReactTooltip.rebuild();
     //   }, []);
@@ -47,6 +47,10 @@ const NavBar = () => {
                                 <li><Link to='/my-toy'>My Toys</Link></li>
                                 <li><Link to='/add-toy'>Add Toys</Link></li>
                                 <li onClick={handleLogout} className='btn btn-outline btn-info'>Logout</li>
+                                <li className="tooltip" data-tip={user.displayName}>
+                                    <img src={user.photoURL} className='w-10 h-10 rounded-full'  />
+                                </li>
+
                             </> :
                                 <li><Link to='/login' className="btn btn-outline btn-accent py-0">Login</Link></li>
                         }
@@ -54,16 +58,16 @@ const NavBar = () => {
                 </div>
             </div>
 
-            <div className='navbar-end '>
+            {/* <div className='navbar-end '>
                 <div className=" dropdown dropdown-end">
                     <label tabIndex={0} className="btn btn-ghost btn-circle   avatar">
                         <div className="w-10 rounded-full">
                             {
                                 user ?
-                                // <> 
-                                // <img src={user?.photoURL} data-tip={user?.displayName}/>
-                                // <ReactTooltip effect="solid" />
-                                // </>
+                                    // <> 
+                                    // <img src={user?.photoURL} data-tip={user?.displayName}/>
+                                    // <ReactTooltip effect="solid" />
+                                    // </>
                                     <Tooltip content={user?.displayName} className='font-bold'>
                                         <img src={user?.photoURL} />
                                     </Tooltip>
@@ -85,7 +89,7 @@ const NavBar = () => {
                         <li onClick={handleLogout}><a>Logout</a></li>
                     </ul>
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 };
