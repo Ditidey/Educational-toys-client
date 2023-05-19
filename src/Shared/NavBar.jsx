@@ -1,22 +1,13 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { contextProvider } from '../AuthProvider';
 import { FaBars, FaTimes, FaUserAlt } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
-import { Tooltip } from 'react-tooltip';
+import { Link, NavLink } from 'react-router-dom';
 import logo from '../../public/logo.png';
-// import ReactTooltip from 'react-tooltip';
-// import 'react-tooltip/dist/index.css';
-// const ReactTooltip = require('react-tooltip').default;
-
 
 const NavBar = () => {
     const { user, userLogout } = useContext(contextProvider)
     const [open, setOpen] = useState(false);
-    console.log(user?.displayName, user?.photoURL)
-
-    // useEffect(() => {
-    //     ReactTooltip.rebuild();
-    //   }, []);
+    // console.log(user?.displayName, user?.photoURL)
 
     const handleLogout = () => {
         userLogout()
@@ -38,17 +29,17 @@ const NavBar = () => {
                     }
 
                     <ul tabIndex={0} className={`md:flex md:space-x-8 md:static mt-3  absolute duration-500 ${open === true ? 'top-14' : '-top-72'}`}>
-                        <li><Link to='/'>Home</Link></li>
-                        <li><Link to='/blog'>Blog</Link></li>
-                        <li><Link to='/all-toys'>All Toys</Link></li>
+                        <li><NavLink to='/' className={({ isActive }) => isActive ? 'text-red-800 font-bold' : ''}>Home</NavLink></li>
+                        <li><NavLink to='/blog' className={({ isActive }) => isActive ? 'text-red-800 font-bold' : ''}>Blog</NavLink></li>
+                        <li><NavLink to='/all-toys' className={({ isActive }) => isActive ? 'text-red-800 font-bold' : ''}>All Toys</NavLink></li>
 
                         {
                             user ? <>
-                                <li><Link to='/my-toy'>My Toys</Link></li>
-                                <li><Link to='/add-toy'>Add Toys</Link></li>
+                                <li><NavLink to='/my-toy' className={({ isActive }) => isActive ? 'text-red-800 font-bold' : ''}>My Toys</NavLink></li>
+                                <li><NavLink to='/add-toy' className={({ isActive }) => isActive ? 'text-red-800 font-bold' : ''}>Add Toys</NavLink></li>
                                 <li onClick={handleLogout} className='btn btn-outline btn-info'>Logout</li>
                                 <li className="tooltip" data-tip={user.displayName}>
-                                    <img src={user.photoURL} className='w-10 h-10 rounded-full'  />
+                                    <img src={user.photoURL} className='w-10 h-10 rounded-full' />
                                 </li>
 
                             </> :
@@ -57,39 +48,6 @@ const NavBar = () => {
                     </ul>
                 </div>
             </div>
-
-            {/* <div className='navbar-end '>
-                <div className=" dropdown dropdown-end">
-                    <label tabIndex={0} className="btn btn-ghost btn-circle   avatar">
-                        <div className="w-10 rounded-full">
-                            {
-                                user ?
-                                    // <> 
-                                    // <img src={user?.photoURL} data-tip={user?.displayName}/>
-                                    // <ReactTooltip effect="solid" />
-                                    // </>
-                                    <Tooltip content={user?.displayName} className='font-bold'>
-                                        <img src={user?.photoURL} />
-                                    </Tooltip>
-
-                                    : <FaUserAlt></FaUserAlt>
-                            }
-
-
-                        </div>
-                    </label>
-                    <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52">
-                        <li>
-                            <a className="justify-between">
-                                Profile
-
-                            </a>
-                        </li>
-                        <li><a>Settings</a></li>
-                        <li onClick={handleLogout}><a>Logout</a></li>
-                    </ul>
-                </div>
-            </div> */}
         </div>
     );
 };

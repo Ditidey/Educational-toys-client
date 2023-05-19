@@ -6,7 +6,7 @@ import { Rating } from '@smastrom/react-rating';
 
 const ShopByCat = () => {
     const [tabIndex, setTabIndex] = useState(0);
-    const [category, setCategory] = useState(' ');
+    const [category, setCategory] = useState('Language Learning toys');
     const [datas, setDatas] = useState([])
     console.log(datas)
 
@@ -23,11 +23,7 @@ const ShopByCat = () => {
             <p className='text-center text-5xl font-bold font-serif'>Our popular </p>
             <div className='lg:ms-24 mt-10'>
                 <Tabs selectedIndex={tabIndex} onSelect={(index) => setTabIndex(index)}>
-                    <TabList>
-                        {/* {
-                            datas.map(data => ( <Tab key={data._id}>{data.name}</Tab>))
-                        }
-                          */}
+                    <TabList>               
                         <Tab onClick={() => setCategory('Language Learning toys')}>Language Learning Toys</Tab> 
                         <Tab onClick={() => setCategory('Mathematical Manipulatives')}>Mathematical Manipulatives</Tab>
                         <Tab onClick={() => setCategory('Science Experiment Kits')}>Science Experiment Kits</Tab>
