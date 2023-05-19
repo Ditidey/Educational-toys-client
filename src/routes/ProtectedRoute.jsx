@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { contextProvider } from '../AuthProvider';
 import { Navigate, useLocation } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const ProtectedRoute = ({children}) => {
     const {user, loading} = useContext(contextProvider);
@@ -12,7 +13,16 @@ const ProtectedRoute = ({children}) => {
     if(user){
         return children;
     }
+    else{
+        Swal.fire({
+            title: 'Login First!',
+            text: 'Without login you cannot visit details',
+            icon: 'error',
+            confirmButtonText: 'Agree'
+          })
+    }
     return (
+        
         <Navigate to='/login' state={{from:location}} replace></Navigate>
     );
 };

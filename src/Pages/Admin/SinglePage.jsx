@@ -4,8 +4,6 @@ import { useLoaderData } from 'react-router-dom';
 import NavBar from '../../Shared/NavBar';
 import useTitle from '../../hooks/useTitle';
 
-
-
 const SinglePage = () => {
     useTitle('Toy-Details')
     const toy = useLoaderData();
