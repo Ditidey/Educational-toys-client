@@ -16,7 +16,7 @@ const Banner = () => {
                 <div className="max-w-md">
                     <h1 className="mb-5 text-5xl text-yellow-200 font-bold">Unlock Your Potential</h1>
                     <p className="mb-5">Fuel your child's imagination and foster their development with our wide range of educational toys. From hands-on learning to cognitive challenges, our carefully curated selection offers endless opportunities for fun and growth.</p>
-                    <button className="btn mt-10 px-6 mb-10">Free for trial</button>
+                    <button className="btn mt-10 px-6 mb-10 bg-blue-700">Free for trial</button>
                 </div>
             </div>
         </div>
