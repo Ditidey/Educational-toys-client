@@ -1,4 +1,5 @@
-### live link: https://educational-toys-d7dc4.web.app/all-toys
+### live link: https://educational-toys-d7dc4.web.app
+
 * I used data from mongoDB which is added by user
 * There are used react-icons, react-tabs, aos packages, react-hook-form, react-router etc.
 * Firebase is used for authentication and hosting the site.
